@@ -1,5 +1,10 @@
 class Car (color_param:String,model_param:Int) {
-    val color=color_param
+    var color=color_param
+        set(value) {
+            if (value.length>1) field=value
+        }
+
+
     val model=model_param
 
     fun printInfo(){
