@@ -1,17 +1,47 @@
-class Car (color_param:String,model_param:Int) {
-    var color=color_param
+class Car(brand: String, model: String, year: Int) {
+    // Properties taking parameters from the constructor.
+    var brand: String = brand
+        get() {
+            println("Brand property is called.")
+            return field
+        }
         set(value) {
-            if (value.length>1) field=value
+            println("Brand property is updated.")
+            field = value
         }
 
+    var model: String = model
+        get() {
+            println("Model property is called.")
+            return field
+        }
+        set(value) {
+            println("Model property is updated.")
+            field = value
+        }
 
-    val model=model_param
+    var year: Int = year
+        get() {
+            println("Year property is called.")
+            return field
+        }
+        set(value) {
+            println("Year property is updated.")
+            field = value
+        }
 
-    fun printInfo(){
-        println("Color:$color and Model:$model")
-    }
+    // Other methods or operations can be defined here.
+}
 
-    init {
-        println("car (model:$model) is created")
-    }
+fun main() {
+    val car = Car("Toyota", "Camry", 2023)
+    println("Car Brand: ${car.brand}")
+    println("Car Model: ${car.model}")
+    println("Year of Manufacture: ${car.year}")
+
+    car.brand = "Honda"
+    car.year = 2024
+
+    println("Car Brand (Updated): ${car.brand}")
+    println("Year of Manufacture (Updated): ${car.year}")
 }
