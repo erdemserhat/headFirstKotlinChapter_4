@@ -1,13 +1,13 @@
 class Ogrenci {
     // Özel bir özellik (property) tanımlama
-    var ad: String = ""
+     var ad: String = ""
         get() {
             println("Ad özelliği çağrıldı.")
             return field
         }
         set(value) {
             println("Ad özelliği güncellendi.")
-            field = value
+            field=value
         }
 
     var yas: Int = 0
